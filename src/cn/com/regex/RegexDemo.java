@@ -37,20 +37,21 @@ public class RegexDemo {
     * */
     public static void sortIP(){
         String ipstr = "192.168.1.254 102.49.23.13 10.10.10.10 2.2.2.2 8.109.90.30";
-        ipstr = ipstr.replaceAll("(\\d+)", "00$1");
         System.out.println(ipstr);
+
+        ipstr = ipstr.replaceAll("(\\d+)", "00$1");
 
         ipstr = ipstr.replaceAll("0*(\\d{3})","$1");
-        System.out.println(ipstr);
 
         String[] ips = ipstr.split(" ");
-        System.out.println(Arrays.toString(ips));
 
         Arrays.sort(ips);
+
         ipstr = Arrays.toString(ips);
-        System.out.println(ipstr);
 
         ipstr = ipstr.replaceAll("[\\[\\],]", "");
+
+        ipstr = ipstr.replaceAll("0*(\\d+)", "$1");
         System.out.println(ipstr);
 
 
