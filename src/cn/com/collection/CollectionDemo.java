@@ -31,9 +31,7 @@ public class CollectionDemo {
 
         TreeSet<Map.Entry<String,Integer>> treeSet = new TreeSet<>(Collections.reverseOrder(Map.Entry.comparingByValue()));
         treeSet.addAll(entrySet);
-//        for(Map.Entry<String,Integer> set: treeSet){
-//            System.out.println(set.getKey()+"::"+set.getValue());
-//        }
+
         treeSet.forEach(entry-> System.out.println(entry.getKey()+":::"+entry.getValue()));
 
     }
