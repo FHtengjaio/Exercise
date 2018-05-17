@@ -5,7 +5,7 @@ import java.util.*;
 public class CollectionDemo {
 
     public static void main(String[] args) {
-        hashmapSort2();
+        linkedHashMapDemo();
     }
 
     private static void hashmapSort2() {
