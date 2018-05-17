@@ -1,5 +1,7 @@
 package cn.com.netdown;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -23,7 +25,7 @@ public class DownUtil {
         threads = new DownThread[threadNum];
     }
 
-    public void downloader() throws Exception {
+    public void download() throws Exception {
         URL url = new URL(urlPath);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setConnectTimeout(5 * 1000);
@@ -46,6 +48,59 @@ public class DownUtil {
             RandomAccessFile currentPart = new RandomAccessFile(targetFile, "rw");
             currentPart.seek(startPos);
             threads[i] = new DownThread(startPos, currentFileSize, currentPart);
+            new Thread(threads[i]).start();
+        }
+    }
+
+    public double getCompleteRate(){
+        int sumLength = 0;
+        for (int i=0; i< threadNum; i++){
+            sumLength += threads[i].getLength();
+        }
+        return sumLength * 1.0 / fileSize;
+    }
+
+    private class DownThread implements Runnable{
+        private int startPos;
+        private int currentFileSize;
+        private RandomAccessFile currentPart;
+        private int length;
+
+        public DownThread(int startPos, int currentFileSize, RandomAccessFile currentPart) {
+            this.startPos = startPos;
+            this.currentPart = currentPart;
+            this.currentFileSize = currentFileSize;
+        }
+
+        public int getLength(){
+            return length;
+        }
+
+        @Override
+        public void run() {
+            try{
+                URL url = new URL(urlPath);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setConnectTimeout(5 * 1000);
+                connection.setRequestMethod("GET");
+                connection.setRequestProperty("Accept", "*/*");
+                connection.setRequestProperty("Accept-Language", "zh-CN");
+                connection.setRequestProperty("Charset", "UTF-8");
+                connection.setRequestProperty("Connection","Keep-Alive");
+                InputStream in = connection.getInputStream();
+                in.skip(this.startPos);
+                byte[] buff = new byte[1024];
+                int len = 0;
+                while(length < currentFileSize && (len=in.read(buff)) != -1){
+                    currentPart.write(buff,0,len);
+                    length = length + len;
+                }
+                currentPart.close();
+                in.close();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
         }
     }
 }
