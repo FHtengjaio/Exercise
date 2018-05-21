@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        ul{
+            margin:0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .default{
+            color: grey;
+        }
+        .after{
+            color: blue;
+        }
+        li{
+            width:50px;
+        }
+    </style>
+    <script>
+        function hidOrShow(){
+            var oUl = document.getElementById("listcontent");
+            var oA = document.getElementById("enterance");
+            if(oUl.style.display === "" || oUl.style.display === "block"){
+                oUl.style.display = "none";
+                oA.className = "after";
+            }
+            else{
+                oUl.style.display = "block";
+                oA.className = "default";
+            }
+        }
+        $(document).ready(function(){
+            $("#enter").focus(function (){
+                $(this).css("background-color", "#ccc");
+            });
+        });
+        $(document).ready(function(){
+            $("#enter").blur(function (){
+                $(this).css("background-color", "#fff");
+            });
+        });
+    </script>
+    
+</head>
+<body>
+<!--<input type="button" value="click me" onclick="hidOrShow()">-->
+<div id="nihao">
+    <span id="enterance" class="default">点我看看</span>
+<ul id="listcontent" >
+    <li>内容1</li>
+    <li>内容2</li>
+    <li>内容3</li>
+    <li>内容4</li>
+    <li>内容5</li>
+</ul>
+</div>
+文字显示区域<input type="text" id="enter" name="showtext"/>
+</body>
+</html>

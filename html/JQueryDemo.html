@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+           $("#div1").children().css({"border":"red 2px solid", "color":"red"});
+        });
+    </script>
+    <style>
+       #ele *{
+           display: block;
+           border:lightgrey 1px solid;
+           margin:15px;
+           padding:5px;
+           color:lightgrey;
+       }
+    </style>
+</head>
+
+<body id="ele">
+body曾曾祖父元素
+<div style="width:500px" id="div1">
+    div曾祖父元素
+    <div>
+        第一个子元素
+    </div>
+    <div>
+        div祖父元素
+        <div>
+            div父元素
+            <span>span</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

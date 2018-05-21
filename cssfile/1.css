@@ -1,0 +1,9 @@
+body{margin:0 10px;}
+h1{margin:0;}
+#newstext{border: antiquewhite 1px solid;width:750px;}
+a:link{color: cyan;text-decoration: none;}
+a:visited{color: cyan;text-decoration: none;}
+a:hover{color: chocolate;text-decoration: none;}
+.norm{background-color: burlywood;font-size: 16px;}
+.small{background-color: burlywood;font-size: 10px;color: crimson;}
+.large{background-color: burlywood;font-size: 24px;color: grey;}
