@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>好友列表</title>
+    <style>
+        table{
+            border: #1f6df1 1px solid;
+            width:80px;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #1f6df1;
+            display:none;
+        }
+        table td{
+            border:#1f6df1 1px solid;
+            background-color:gold;
+            padding:0;
+        }
+        a:link,a:visited{
+            color: darkcyan;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blueviolet;
+            text-decoration: none;
+        }
+        .open{
+            display: block;
+        }
+        .close{
+            display: none;
+        }
+    </style>
+    <script>
+        function hidOrShow(node){
+            var parent = node.parentNode;
+            var oUlNode = parent.getElementsByTagName("ul")[0];
+            var oTableNode = document.getElementById("tablelist");
+            var oUlNodes = oTableNode.getElementsByTagName("ul");
+            for(var i=0;i<oUlNodes.length;i++){
+                if(oUlNodes[i]===oUlNode){
+                    if(oUlNode.className==="open"){
+                        oUlNode.className = "close"
+                    }else{
+                        oUlNode.className = "open"
+                    }
+                }else{
+                    oUlNodes[i].className = "close";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table id="tablelist">
+    <tr>
+        <td>
+            <a href="javascript:void(0)" onclick="hidOrShow(this)">好友列表</a>
+            <ul>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="javascript:void(0)" onclick="hidOrShow(this)">好友列表</a>
+            <ul>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="javascript:void(0)" onclick="hidOrShow(this)">好友列表</a>
+            <ul>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="javascript:void(0)" onclick="hidOrShow(this)">好友列表</a>
+            <ul>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+                <li>一个好友</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
