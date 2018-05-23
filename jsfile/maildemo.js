@@ -14,23 +14,23 @@ onload = function (ev) {
         oTrNodes[i].onmouseout = function () {
             this.className = name;
         };
-        oTrNodes[i].cells[0].get = function () {
-            for(var j=1; j<oTrNodes.length; j++){
-                if(!oTrNodes[j].cells[0].checked){
+
+    }
+    check();
+};
+
+function check() {
+    var flag = true;
+    var inputs = document.getElementsByTagName("input");
+    for(var i=1; i<inputs.length; i++){
+        inputs[i].onclick = function (ev) {
+            for(var j=1; j<inputs.length; j++){
+                if(inputs[j].checked){
                     flag = false;
                 }
             }
             if(flag)
-                oTrNodes[0].cells[0].checked = true;
-        }
-    }
-};
-
-function check() {
-    var inputs = document.getElementsByTagName("input");
-    for(var i=1; i<inputs.length; i++){
-        inputs[i].onclick = function (ev) {
-            for(var j=0; j<)
+                inputs[0].checked = true;
         };
     }
 }
