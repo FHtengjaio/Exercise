@@ -10,6 +10,13 @@ table td, table th{
     text-align: center;
     height: 40px;
 }
+table a:link,table a:visited{
+    text-decoration: none;
+    color: darkred;
+}
+table a:hover{
+    color: chocolate;
+}
 .odd{
     background-color: #f3c98f;
 }
