@@ -1,0 +1,30 @@
+table{
+    border: #1f6df1 1px solid;
+    background-color: lightslategrey;
+    border-collapse: collapse;
+    width:300px;
+}
+table td, table th{
+    border: #1f6df1 1px solid;
+    text-align: left;
+}
+#btn-div{
+    margin-top:5px;
+}
+button{
+    background-color: #2e81ff;
+    width:80px;
+    height:30px;
+    border: none;
+    border-radius: 3px;
+    outline:none;
+}
+.odd{
+    background-color: antiquewhite;
+}
+.even{
+    background-color: aquamarine;
+}
+.over{
+    background-color: #df4011;
+}

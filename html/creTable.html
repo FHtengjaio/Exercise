@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表格</title>
+    <link type="text/css" rel="stylesheet" href="../cssfile/table.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>function creTable2() {
+        var oRow = document.getElementById("row");
+        var oCol = document.getElementById("col");
+        if(!(/^[1-9][0-9]*$/.test(oRow.value) && /^[1-9][0-9]*$/.test(oCol.value))) {
+            alert("请输入正确的数字");
+            oRow.value = "";
+            oCol.value = "";
+            return;
+        }
+        var oTableNode = document.createElement("table");
+        for(var i=1; i<=oRow.value; i++){
+            var oTrNode = oTableNode.insertRow();
+            for(var j=1; j<=oCol.value; j++){
+                var oTdNode = oTrNode.insertCell();
+                oTdNode.innerHTML = "我是单元格:"+i+"--"+j;
+            }
+        }
+        var oDiv = document.getElementById("table-div");
+        oDiv.appendChild(oTableNode);
+    }
+
+    function creTable1() {
+            var button1 = document.getElementById("btn");
+            button1.disabled = true;
+            var oRow = document.getElementById("row");
+            var oCol = document.getElementById("col");
+            if(!(/^[1-9][0-9]*$/.test(oRow.value) && /^[1-9][0-9]*$/.test(oCol.value))){
+                alert("请输入正确的数字");
+                oRow.value = "";
+                oCol.value = "";
+                return;
+            }
+            var oTableNode = document.createElement("table");
+            var oTbodyNode = document.createElement("tbody");
+            for(var i=1; i<=oRow.value; i++){
+                var oTrNode = document.createElement("tr");
+                for(var j=1; j<=oCol.value; j++){
+                    var oTdNode = document.createElement("td");
+                    oTdNode.innerHTML = "我是单元格:"+i+"--"+j;
+                    oTrNode.appendChild(oTdNode);
+                }
+                oTbodyNode.appendChild(oTrNode);
+            }
+            var oDiv = document.getElementById("table-div");
+            oTableNode.appendChild(oTbodyNode);
+            oDiv.appendChild(oTableNode);
+        }
+
+    $(document).ready(function () {
+       $("#btn").click(function () {
+           var oRow = $("#row");
+           var oCol = $("#col");
+           if(!(/^[1-9][0-9]*$/.test(oRow.val()) && /^[1-9][0-9]*$/.test(oCol.val()))) {
+               alert("请输入正确的数字");
+               oRow.val("");
+               oCol.val("");
+               return;
+           }
+           var oTableNode = $("<table></table>");
+           $("#table-div").append(oTableNode);
+           alert(oTableNode.nodeName);
+           for(var i=1; i<=oRow.val(); i++){
+               var oTrNode = oTableNode.insertRow();
+               for(var j=1; j<=oCol.val(); j++){
+                   var oTdNode = oTrNode.insertCell();
+                   oTdNode.val("我是单元格:"+i+"--"+j);
+               }
+           }
+       });
+    });
+
+    </script>
+</head>
+<body>
+行数<input type="text" name="rowNum" id="row" />
+列数<input type="text" name="colNum" id="col" />
+<button id="btn">创建表格</button>
+<hr />
+<div id="table-div"></div>
+</body>
+</html>
