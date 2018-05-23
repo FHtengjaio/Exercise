@@ -6,7 +6,7 @@
     </script>
     <script>
         $(document).ready(function () {
-           $("#div1").children().css({"border":"red 2px solid", "color":"red"});
+           $(".p2").nextAll().css({"border":"red 2px solid", "color":"red"});
         });
     </script>
     <style>
@@ -24,10 +24,15 @@
 body曾曾祖父元素
 <div style="width:500px" id="div1">
     div曾祖父元素
-    <div>
-        第一个子元素
+    <p id="p1">文字段落1</p>
+    <div class="1">
+        第一个子元素div
     </div>
-    <div>
+    <p class="p2">文字段落2</p>
+    <div class="1">
+        第二个子元素div
+    </div>
+    <div id="div2">
         div祖父元素
         <div>
             div父元素
