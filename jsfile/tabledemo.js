@@ -2,7 +2,6 @@ var name;
 onload = function (ev) {
     var oTabNode = document.getElementById("tabid");
     var oTrNodes = oTabNode.rows;
-    var oTdNodes;
     for(var i=1; i<oTrNodes.length;i++){
         if(i % 2){
             oTrNodes[i].className = "odd";
