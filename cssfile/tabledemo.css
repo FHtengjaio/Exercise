@@ -1,0 +1,22 @@
+table{
+    border: #1f6df1 1px solid;
+    border-collapse:collapse;
+    width:501px;
+    background-color: grey;
+}
+table td, table th{
+    border: #1f6df1 1px solid;
+    width: 137px;
+    text-align: center;
+    height: 40px;
+}
+.odd{
+    background-color: #f3c98f;
+}
+.even{
+    background-color: aquamarine;
+}
+.over{
+    background-color: coral;
+}
+
