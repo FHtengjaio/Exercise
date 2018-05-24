@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调查问卷</title>
+    <link rel="stylesheet" href="../cssfile/asktion.css" type="text/css"/>
+    <script src="../jsfile/asktion.js"></script>
+</head>
+<body>
+<h1>性格调查问卷</h1>
+<div>
+    你是否愿意参加调查问卷？
+    <input type="radio" name="tf" value="yes" onclick="showContent(this)"/>是
+    <input type="radio" name="tf" value="no" checked="checked"  onclick="showContent(this)"/>否
+</div>
+<div id="content" class="close">
+    <div>
+        <h2>问题1</h2>
+        <h3>你喜欢吃什么水果？</h3>
+    </div>
+    <div>
+        <ul>
+            <li><input type="radio" name="no1" value="1"/>西瓜</li>
+            <li><input type="radio" name="no1" value="2"/>香蕉</li>
+            <li><input type="radio" name="no1" value="3"/>苹果</li>
+            <li><input type="radio" name="no1" value="4"/>芒果</li>
+            <li><input type="radio" name="no1" value="5"/>荔枝</li>
+            <li><input type="radio" name="no1" value="6"/>樱桃</li>
+        </ul>
+    </div>
+    <div id="result">
+        <button>调查结果</button>
+        1-3分:性格倔强，需要改正
+        4分以上:性格温和，有时候像个替罪羊
+    </div>
+</div>
+</body>
+</html>

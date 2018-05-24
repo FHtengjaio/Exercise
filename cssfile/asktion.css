@@ -1,0 +1,24 @@
+.close{
+    display: none;
+}
+.open{
+    display: block;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+#content{
+    background-color: #f3c98f;
+    border: #1f6df1 1px solid;
+    border-radius: 6px;
+    width: 350px;
+}
+button{
+    background-color: #1f6df1;
+    outline: none;
+    border: none;
+}
+#result{
+    margin-top: 5px;
+}
