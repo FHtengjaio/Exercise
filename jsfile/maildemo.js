@@ -1,5 +1,16 @@
 var name;
 onload = function (ev) {
+    trColor();
+};
+
+function checkAll(node){
+    var oCheckboxes = document.getElementsByName("item");
+    for(var i=0; i<oCheckboxes.length; i++){
+        oCheckboxes[i].checked = node.checked;
+    }
+}
+
+function trColor() {
     var oTabNode = document.getElementById("tabid");
     var oTrNodes = oTabNode.rows;
     for (var i=1; i<oTrNodes.length; i++){
@@ -14,44 +25,41 @@ onload = function (ev) {
         oTrNodes[i].onmouseout = function () {
             this.className = name;
         };
-
-    }
-    check();
-};
-
-function check() {
-    var flag = true;
-    var inputs = document.getElementsByTagName("input");
-    for(var i=1; i<inputs.length; i++){
-        inputs[i].onclick = function (ev) {
-            for(var j=1; j<inputs.length; j++){
-                if(inputs[j].checked){
-                    flag = false;
-                }
-            }
-            if(flag)
-                inputs[0].checked = true;
-        };
     }
 }
 
-function selectAll(){
+function setCheckboxByButton(number){
     var inputs = document.getElementsByTagName("input");
     for(var i=0; i<inputs.length; i++){
-        inputs[i].checked = true;
+        if(number>1)
+            inputs[i].checked = !inputs[i].checked;
+        else
+            inputs[i].checked = number;
     }
 }
 
-function cancleAll(){
+function delMail() {
     var inputs = document.getElementsByTagName("input");
     for(var i=0; i<inputs.length; i++){
-        inputs[i].checked = false;
+        if(!inputs[i].checked)
+            continue;
+        var trNode = inputs[i].parentNode.parentNode;
+        trNode.parentNode.removeChild(trNode);
+        i--;
+        trColor();
     }
 }
 
-function oppositeAll() {
+function delMail2(){
+    var index = 0;
     var inputs = document.getElementsByTagName("input");
-    for(var i=1; i<inputs.length; i++){
-        inputs[i].checked = inputs[i].checked?false:true;
+    var arr = [];
+    for(var i=0; i<inputs.length; i++){
+        if(inputs[i].checked)
+            arr[index++] = inputs[i].parentNode.parentNode;
     }
+    for(var j=0; j<arr.length; j++){
+        arr[j].parentNode.removeChild(arr[j]);
+    }
+    trColor();
 }

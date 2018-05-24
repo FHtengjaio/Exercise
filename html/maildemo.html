@@ -9,55 +9,74 @@
 <body>
 <table id="tabid">
     <tr>
-        <th><input type="checkbox" name="All"/>全选</th>
+        <th><input type="checkbox" name="All" onclick="checkAll(this)"/>全选</th>
+        <th>发件人</th>
         <th>邮件名称</th>
         <th>邮件内容</th>
+        <th>附件</th>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三1</td>
         <td>邮件名称1</td>
         <td>邮件内容111</td>
+        <td>附件内容1</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三2</td>
         <td>邮件名称2</td>
         <td>邮件内容2222</td>
+        <td>附件内容2</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三3</td>
         <td>邮件名称3</td>
         <td>邮件内容33333</td>
+        <td>附件内容3</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三4</td>
         <td>邮件名称4</td>
         <td>邮件内容44444</td>
+        <td>附件内容4</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三5</td>
         <td>邮件名称5</td>
         <td>邮件内容5555</td>
+        <td>附件内容5</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三6</td>
         <td>邮件名称6</td>
         <td>邮件内容6666</td>
+        <td>附件内容6</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三7</td>
         <td>邮件名称7</td>
         <td>邮件内容777</td>
+        <td>附件内容7</td>
     </tr>
     <tr>
         <td><input type="checkbox" name="item"/></td>
+        <td>张三8</td>
         <td>邮件名称8</td>
         <td>邮件内容8888</td>
+        <td>附件内容8</td>
     </tr>
 </table>
 <div id="btn-div">
-<button id="select-all" onclick="selectAll()">全选</button>
-<button id="unselect-all" onclick="cancleAll()">取消全选</button>
-<button id="opposite" onclick="oppositeAll()">反选</button>
+<button id="select-all" onclick="setCheckboxByButton(1)">全选</button>
+<button id="unselect-all" onclick="setCheckboxByButton(0)">取消全选</button>
+<button id="opposite" onclick="setCheckboxByButton(2)">反选</button>
+<button id="del" onclick="delMail2()">删除所选邮件</button>
 </div>
 </body>
 </html>
