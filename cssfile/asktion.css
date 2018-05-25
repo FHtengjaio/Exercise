@@ -12,13 +12,20 @@ ul{
     background-color: #f3c98f;
     border: #1f6df1 1px solid;
     border-radius: 6px;
-    width: 350px;
+    width: 300px;
 }
 button{
+    margin-left: 3px;
+    margin-bottom: 2px;
     background-color: #1f6df1;
     outline: none;
     border: none;
+    border-radius: 3px;
 }
 #result{
     margin-top: 5px;
+}
+span{
+    margin-left: 3px;
+    margin-bottom: 2px;
 }

@@ -3,7 +3,13 @@ package cn.com.thread;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
-
+/*
+* Callable总结：
+* 实现Callable的对象需以参数的形式传递给FutureTask对象。
+* 因为FutureTask实现了Runnable接口和Future接口。
+* Thread类只能接受Runnable接口对象的参数，因此FutureTask对象可以传递给Thread;
+* Future接口中定义了get()方法，因此FutureTask可以调用get()方法获取Callable接口对象中call()方法的返回值
+* */
 public class CallableDemo {
     public static void main(String[] args) {
         callableDemo3();

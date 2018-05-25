@@ -29,9 +29,12 @@
         </ul>
     </div>
     <div id="result">
-        <button>调查结果</button>
-        1-3分:性格倔强，需要改正
-        4分以上:性格温和，有时候像个替罪羊
+        <button id="res-btn" onclick="showResult()">点我看结果</button>
+        <span id="pompt" class="close" style="color:red;">请点击选择答案</span>
+    </div>
+    <div>
+        <span id="res_1" class="close">1-3分:性格倔强，需要改正</span>
+        <span id="res_2" class="close">4分以上:性格温和，有时候像个替罪羊</span>
     </div>
 </div>
 </body>
